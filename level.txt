@@ -852,5 +852,127 @@
     "zIndex": 0,
     "doSerialization": true,
     "isDead": false
+  },
+  {
+    "uid": 15,
+    "name": "Sprite_Object_Created",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/tilemap_packed.png",
+              "width": 432,
+              "height": 288
+            },
+            "texCoords": [
+              {
+                "x": 0.6296296,
+                "y": 1.0
+              },
+              {
+                "x": 0.6296296,
+                "y": 0.9444444
+              },
+              {
+                "x": 0.5925926,
+                "y": 0.9444444
+              },
+              {
+                "x": 0.5925926,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 32
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 448.0,
+        "y": -896.0
+      },
+      "scale": {
+        "x": 32.0,
+        "y": 32.0
+      },
+      "rotation": 0.0,
+      "zIndex": 0,
+      "uid": -1
+    },
+    "zIndex": 0,
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 16,
+    "name": "Sprite_Object_Created",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/tilemap_packed.png",
+              "width": 432,
+              "height": 288
+            },
+            "texCoords": [
+              {
+                "x": 0.6296296,
+                "y": 1.0
+              },
+              {
+                "x": 0.6296296,
+                "y": 0.9444444
+              },
+              {
+                "x": 0.5925926,
+                "y": 0.9444444
+              },
+              {
+                "x": 0.5925926,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 33
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 608.0,
+        "y": 352.0
+      },
+      "scale": {
+        "x": 32.0,
+        "y": 32.0
+      },
+      "rotation": 0.0,
+      "zIndex": 0,
+      "uid": -1
+    },
+    "zIndex": 0,
+    "doSerialization": true,
+    "isDead": false
   }
 ]

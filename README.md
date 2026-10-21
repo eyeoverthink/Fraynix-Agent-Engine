@@ -64,7 +64,7 @@ It focuses on fast sprite placement, grid snapping, scene persistence, and in-ed
 - Internet access for first Gradle dependency resolution.
 
 ## Build and run (PowerShell)
-From project root (`Mario_ep18`):
+From project root:
 
 ```powershell
 .\gradlew.bat run
@@ -126,6 +126,10 @@ Notes:
 4. Include notes when changing serialization format or component type names.
 
 ## License
-No explicit license file is currently present in this repository.
-Add a `LICENSE` file before public redistribution.
+All rights reserved by Vaughn Scott.
+See `LICENSE` for creator-rights and usage terms.
+
+## Creator
+- Creator: Vaughn Scott
+- Project brand: Fraynix-Agent-Engine
 

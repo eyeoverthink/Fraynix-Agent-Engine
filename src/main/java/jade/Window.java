@@ -42,7 +42,7 @@ public class Window {
     private Window() {
         this.width = 1920;
         this.height = 1080;
-        this.title = "Mario";
+        this.title = "Fraynix-Agent-Engine";
 
 
         r = 1;

@@ -9,7 +9,21 @@
 	<packaging>jar</packaging>
 
 	<name>Fraynix-Agent-Engine</name>
+	<description>Fraynix-Agent-Engine - Java LWJGL + ImGui level editor/runtime</description>
 	<url>http://maven.apache.org</url>
+
+	<organization>
+		<name>Vaughn Scott</name>
+	</organization>
+
+	<developers>
+		<developer>
+			<name>Vaughn Scott</name>
+			<roles>
+				<role>Creator</role>
+			</roles>
+		</developer>
+	</developers>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
