@@ -1,0 +1,17 @@
+.idea/
+*.iml
+
+.gradle/
+build/
+out/
+
+# Keep Gradle wrapper tracked
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# Runtime/editor noise
+imgui.ini
+
+# Optional local export/debug assets
+uiPreview.svg
+tilesets.svg
