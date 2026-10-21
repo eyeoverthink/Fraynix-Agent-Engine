@@ -58,8 +58,8 @@ It focuses on fast sprite placement, grid snapping, scene persistence, and in-ed
 - Asset cache entrypoint: `src/main/java/util/AssetPool.java`
 
 ## Local development setup
-## Requirements
-- Windows with Java JDK installed.
+### Requirements
+- Windows with Java JDK 25 LTS installed (matches `.java-version` and Gradle toolchain).
 - OpenGL-capable GPU/drivers.
 - Internet access for first Gradle dependency resolution.
 
@@ -75,6 +75,7 @@ From project root (`Mario_ep18`):
 Notes:
 - `test` may be effectively empty right now because `src/main/test` has no tests yet.
 - Runtime window title is now `Fraynix-Agent-Engine`.
+- If you previously used older Gradle caches, run `clean` once after updating wrapper/toolchain.
 
 ## Typical editor workflow
 1. Launch app with Gradle run.
@@ -104,6 +105,8 @@ Notes:
   - check viewport bounds and picking framebuffer resolution assumptions.
 - Build works with one tool but not the other:
   - stick to Gradle unless you intentionally align Maven dependencies first.
+- Error `Unsupported class file major version ...`:
+  - your Gradle runtime and JDK are mismatched; use the checked-in wrapper and confirm `java -version` matches `.java-version`.
 
 ## Roadmap ideas
 - Add automated tests under `src/main/test`.

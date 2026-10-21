@@ -15,3 +15,7 @@ imgui.ini
 # Optional local export/debug assets
 uiPreview.svg
 tilesets.svg
+
+# Windows metadata
+**/Thumbs.db
+
