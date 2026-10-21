@@ -10,7 +10,7 @@ It focuses on fast sprite placement, grid snapping, scene persistence, and in-ed
 
 ## Current status
 - Primary workflow is Gradle (`build.gradle`, `gradlew.bat`).
-- Maven metadata exists (`pom.xml`) but dependency versions differ; prefer one build tool per session.
+- Maven metadata (`pom.xml`) is aligned with the Gradle dependency/toolchain baseline.
 - `level.txt` is the active serialized scene file and is loaded/saved automatically by `Scene`.
 
 ## Core architecture
@@ -73,7 +73,7 @@ From project root (`Mario_ep18`):
 ```
 
 Notes:
-- `test` may be effectively empty right now because `src/main/test` has no tests yet.
+- Smoke tests live under `src/test/java`.
 - Runtime window title is now `Fraynix-Agent-Engine`.
 - If you previously used older Gradle caches, run `clean` once after updating wrapper/toolchain.
 
@@ -109,7 +109,7 @@ Notes:
   - your Gradle runtime and JDK are mismatched; use the checked-in wrapper and confirm `java -version` matches `.java-version`.
 
 ## Roadmap ideas
-- Add automated tests under `src/main/test`.
+- Expand automated tests under `src/test/java`.
 - Unify framebuffer constants (replace magic `1940x1080` with shared config).
 - Add scene/version migration support for serialized JSON.
 - Add camera controls and multi-selection UX improvements.
