@@ -1,0 +1,7 @@
+// ============================================================
+// Fraynix-Agent-Engine LibGDX — Project Settings
+// settings.gradle — root project + submodules
+// ============================================================
+
+rootProject.name = 'fraynix-agent-engine-libgdx'
+include ':core', ':desktop'

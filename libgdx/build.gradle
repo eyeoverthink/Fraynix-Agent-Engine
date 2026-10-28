@@ -1,0 +1,42 @@
+// ============================================================
+// Fraynix-Agent-Engine LibGDX — Root Build File
+// Fixes macOS by using LibGDX's auto-platform-native resolution
+// + ImGui Java with ALL platform natives (Windows + macOS + Linux)
+// ============================================================
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+version = '2.0-SNAPSHOT'
+
+allprojects {
+    repositories {
+        mavenCentral()
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    // No fixed toolchain: builds with whichever JDK runs Gradle (this repo pins
+    // Java 25 in .java-version) and still emits Java 11 bytecode.
+
+    tasks.withType(JavaCompile).configureEach {
+        options.release = 11
+    }
+}
+
+// ============================================================
+// Key: No more "natives-windows" hardcode!
+// LibGDX's gdx-platform resolves natives per-OS automatically.
+// imgui-java includes natives for ALL platforms.
+// ============================================================

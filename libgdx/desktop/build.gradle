@@ -1,0 +1,38 @@
+// ============================================================
+// desktop/build.gradle — Desktop Launcher Module
+// THIS IS THE FILE THAT FIXES macOS
+// Includes ImGui natives for ALL platforms (not just Windows!)
+// ============================================================
+
+apply plugin: 'application'
+
+dependencies {
+    implementation project(":core")
+
+    // LibGDX desktop backend (LWJGL3 — auto-resolves natives per OS)
+    implementation "com.badlogicgames.gdx:gdx-backend-lwjgl3:1.12.1"
+    implementation "com.badlogicgames.gdx:gdx-platform:1.12.1:natives-desktop"
+
+    // ImGui Java binding — with ALL platform natives
+    // This is the critical fix: we include Windows + macOS + Linux natives
+    implementation "io.github.spair:imgui-java-binding:1.86.11"
+    implementation "io.github.spair:imgui-java-lwjgl3:1.86.11"
+
+    // Platform-specific ImGui natives — ALL THREE PLATFORMS
+    runtimeOnly "io.github.spair:imgui-java-natives-windows:1.86.11"
+    runtimeOnly "io.github.spair:imgui-java-natives-macos:1.86.11"    // ← THIS WAS MISSING
+    runtimeOnly "io.github.spair:imgui-java-natives-linux:1.86.11"    // ← THIS WAS MISSING
+}
+
+application {
+    mainClass = 'com.fraynix.desktop.DesktopLauncher'
+}
+
+// Run from this folder so "assets/..." paths, level.txt and imgui.ini resolve,
+// and give GLFW the JVM's first thread on macOS (LWJGL3 requires it there).
+tasks.named('run') {
+    workingDir = rootProject.projectDir
+    if (System.getProperty('os.name').toLowerCase().contains('mac')) {
+        jvmArgs '-XstartOnFirstThread'
+    }
+}
