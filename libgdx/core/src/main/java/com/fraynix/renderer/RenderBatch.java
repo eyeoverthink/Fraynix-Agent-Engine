@@ -182,7 +182,7 @@ public class RenderBatch implements Comparable<RenderBatch> {
     }
 
     public boolean hasRoom() { return this.hasRoom; }
-    public boolean hasTextureRoom() { return this.textures.size < 8; }
+    public boolean hasTextureRoom() { return this.textures.size < 7; } // units 1-7, see default.fs
     public boolean hasTexture(Texture tex) { return this.textures.contains(tex, true); }
     public int zIndex() { return this.zIndex; }
 

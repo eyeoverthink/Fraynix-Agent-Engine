@@ -19,10 +19,12 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.fraynix.editor.EditorUI;
+import com.fraynix.renderer.Renderer;
 import com.fraynix.renderer.ViewportBuffer;
 import com.fraynix.scenes.LevelEditorScene;
 import com.fraynix.scenes.LevelScene;
 import com.fraynix.scenes.Scene;
+import com.fraynix.util.AssetPool;
 
 public class FraynixApp extends ApplicationAdapter {
 
@@ -47,6 +49,8 @@ public class FraynixApp extends ApplicationAdapter {
         instance = this;
         this.framebuffer = new ViewportBuffer(viewportWidth, viewportHeight);
         this.editorUI = new EditorUI();
+        // Sprite shader: Renderer.render() draws nothing until one is bound
+        Renderer.bindShader(AssetPool.getShader("assets/shaders/default"));
         changeScene(EDITOR_SCENE);
         currentScene.load();
         currentScene.init();

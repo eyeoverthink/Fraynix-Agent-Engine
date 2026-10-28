@@ -28,14 +28,16 @@ in `.java-version`). The code compiles to Java 11 bytecode.
   `EditorUI` imports GLFW and ImGui's GLFW/GL3 backends
 - `build.gradle`: drops the fixed Java 21 toolchain so the installed JDK is used
 
+## Mac fixes
+
+- `DesktopLauncher`: requests an OpenGL 3.2 core context on macOS (`setOpenGLEmulation(GL30, 3, 2)`), which the `#version 330` shaders and ImGui need
+- `DebugDraw`: on macOS, compiles LibGDX's built-in `ShapeRenderer` shader with a GLSL 150 header (only while that shader is built)
+- `FraynixApp`: loads and binds `assets/shaders/default` at startup, so `Renderer.render` draws sprites
+- `assets/shaders/default.fs`: `uTextures` is now `sampler2D`, read with constant indices 1-7 to match the texture units `RenderBatch` binds; the unused declaration is gone from `default.vs`
+- `RenderBatch`: a batch takes at most 7 textures, one per sampler slot
+
 ## Still to do
 
 - Port Rigidbody2D physics from Fraymus-Engine (swap JOML vectors for LibGDX vectors)
 - Wire an `InputProcessor` into `MouseListener` / `KeyListener`
-- Load and bind the sprite shader: nothing calls `Renderer.bindShader(...)` yet, so
-  `Renderer.render` returns before drawing anything
-- `assets/shaders/default.fs` declares `uniform int uTextures[8]`; `texture()` needs `sampler2D`
-- macOS: the `#version 330` shaders and `imGuiGl3.init("#version 330")` need an OpenGL 3.2
-  core context (`config.setOpenGLEmulation(GLEmulation.GL30, 3, 2)` in `DesktopLauncher`);
-  LibGDX's built-in `ShapeRenderer` shader (used by `DebugDraw`) then needs a GLSL 150 prefix
-- Not compiled yet: no Java toolchain was available while packaging
+- Not compiled or run yet: no Java toolchain was available while packaging

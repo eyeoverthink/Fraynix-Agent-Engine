@@ -7,7 +7,6 @@ layout (location=4) in float a_entityId;
 
 uniform mat4 uProjection;
 uniform mat4 uView;
-uniform int uTextures[8];
 
 out vec4 f_color;
 out vec2 f_texCoord;
